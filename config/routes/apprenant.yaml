@@ -1,4 +1,3 @@
-# config/routes/apprenant.yaml
 app_apprenant_index:
     path: /apprenant/
     controller: App\Controller\ApprenantController::getAllApprenant
