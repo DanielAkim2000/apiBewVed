@@ -6,25 +6,25 @@ controllers:
 
 # config/routes.yaml
 app_apprenant:
-    resource: 'config/routes/apprenant.yaml'
+    resource: '/routes/apprenant.yaml'
     type: 'yaml'
 
 app_competence:
-    resource: 'config/routes/competence.yaml'
+    resource: '/routes/competence.yaml'
     type: 'yaml'
 
 app_formateur:
-    resource: 'config/routes/formateur.yaml'
+    resource: '/routes/formateur.yaml'
     type: 'yaml'
 
 app_formation:
-    resource: 'config/routes/formation.yaml'
+    resource: '/routes/formation.yaml'
     type: 'yaml'
 
 app_groupe:
-    resource: 'config/routes/groupe.yaml'
+    resource: '/routes/groupe.yaml'
     type: 'yaml'
 
 app_promotion:
-    resource: 'config/routes/promotion.yaml'
+    resource: '/routes/promotion.yaml'
     type: 'yaml'
