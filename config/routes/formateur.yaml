@@ -6,7 +6,7 @@ app_formateur_index:
     methods: [GET]
 
 app_formateur_new:
-    path: /formateur/new
+    path: /formateur/new/
     controller: App\Controller\FormateurController::new
     methods: [POST]
 
@@ -16,7 +16,7 @@ app_formateur_show:
     methods: [GET]
 
 app_formateur_update:
-    path: /formateur/{id}/edit
+    path: /formateur/{id}/edit/
     controller: App\Controller\FormateurController::edit
     methods: [PUT]
 

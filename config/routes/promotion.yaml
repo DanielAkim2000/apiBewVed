@@ -6,7 +6,7 @@ app_promotion_index:
     methods: [GET]
 
 app_promotion_new:
-    path: /promotion/new
+    path: /promotion/new/
     controller: App\Controller\PromotionController::new
     methods: [POST]
 
@@ -16,7 +16,7 @@ app_promotion_show:
     methods: [GET]
 
 app_promotion_update:
-    path: /promotion/{id}/edit
+    path: /promotion/{id}/edit/
     controller: App\Controller\PromotionController::edit
     methods: [PUT]
 

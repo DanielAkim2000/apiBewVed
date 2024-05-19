@@ -9,12 +9,12 @@ app_apprenant_show:
     methods: GET
 
 app_apprenant_new:
-    path: /apprenant/new
+    path: /apprenant/new/
     controller: App\Controller\ApprenantController::new
     methods: [GET, POST]
 
 app_apprenant_edit:
-    path: /apprenant/{id}/edit
+    path: /apprenant/{id}/edit/
     controller: App\Controller\ApprenantController::edit
     methods: PUT
 

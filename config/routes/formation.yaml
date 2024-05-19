@@ -1,11 +1,11 @@
 # Routes for FormationController
 app_formation_index:
-    path: /formation
+    path: /formation/
     controller: App\Controller\FormationController::getAllFormations
     methods: ['GET']
 
 app_formation_new:
-    path: /formation/new
+    path: /formation/new/
     controller: App\Controller\FormationController::new
     methods: ['GET', 'POST']
 
@@ -17,7 +17,7 @@ app_formation_show:
         id: '\d+'
 
 app_formation_edit:
-    path: /formation/{id}/edit
+    path: /formation/{id}/edit/
     controller: App\Controller\FormationController::edit
     methods: ['PUT']
     requirements:

@@ -6,7 +6,7 @@ app_groupe_index:
     methods: [GET]
 
 app_groupe_new:
-    path: /groupe/new
+    path: /groupe/new/
     controller: App\Controller\GroupeController::new
     methods: [GET, POST]
 
@@ -16,7 +16,7 @@ app_groupe_show:
     methods: [GET]
 
 app_groupe_edit:
-    path: /groupe/{id}/edit
+    path: /groupe/{id}/edit/
     controller: App\Controller\GroupeController::edit
     methods: [GET, POST]
 
