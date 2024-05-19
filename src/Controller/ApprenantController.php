@@ -115,10 +115,10 @@ class ApprenantController extends AbstractController
         if (!isset($data['age'])) {
             return new JsonResponse(['error' => 'Veuillez renseigner l\'âge'], 400, ['Content-Type' => 'application/json']);
         }
-        if (!isset($data['sexe'])) {
+        if (!isset($data['sexe']) || $data['sexe'] === null || $data['sexe'] === "") {
             return new JsonResponse(['error' => 'Veuillez renseigner le sexe'], 400, ['Content-Type' => 'application/json']);
         }
-        if (!isset($data['promotion'])) {
+        if (!isset($data['promotion']) || $data['promotion'] === null || $data['promotion'] === "") {
             return new JsonResponse(['error' => 'Veuillez renseigner la promotion'], 400, ['Content-Type' => 'application/json']);
         }
         if (!isset($data['competences'])) {

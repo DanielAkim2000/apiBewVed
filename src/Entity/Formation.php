@@ -16,7 +16,8 @@ class Formation
     private ?int $id = null;
 
     #[ORM\Column(length: 255)]
-    private ?string $name = null;
+    private string $name;
+    
 
     #[ORM\Column]
     private ?int $duree = null;

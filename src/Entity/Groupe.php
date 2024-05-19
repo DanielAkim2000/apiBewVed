@@ -78,4 +78,9 @@ class Groupe
 
         return $this;
     }
+
+    public function getFormateur(): ?Formateur
+    {
+        return $this->formation->getFormateur();
+    }
 }

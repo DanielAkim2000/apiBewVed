@@ -16,10 +16,10 @@ class Formateur
     private ?int $id = null;
 
     #[ORM\Column(length: 255)]
-    private ?string $firstname = null;
+    private string $firstname;
 
     #[ORM\Column(length: 255)]
-    private ?string $lastname = null;
+    private string $lastname;
 
     /**
      * @var Collection<int, Formation>

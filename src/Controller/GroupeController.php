@@ -6,6 +6,7 @@ use App\Entity\Apprenant;
 use App\Entity\Formation;
 use App\Entity\Groupe;
 use App\Form\GroupeType;
+use App\Repository\FormateurRepository;
 use App\Repository\GroupeRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -18,7 +19,7 @@ use Symfony\Component\Routing\Attribute\Route;
 class GroupeController extends AbstractController
 {
     #[Route('/', name: 'app_groupe_index', methods: ['GET'])]
-    public function index(GroupeRepository $groupeRepository): Response
+    public function index(GroupeRepository $groupeRepository, FormateurRepository $formateurRepository): Response
     {
         $groupes = $groupeRepository->findAll();
 
@@ -27,6 +28,7 @@ class GroupeController extends AbstractController
             $groupeArray[] = [
                 'id' => $groupe->getId(),
                 'nom' => $groupe->getName(),
+                'formateur' => $groupe->getFormateur()->getFirstname() . ' ' . $groupe->getFormateur()->getLastname(),
                 'apprenants' => $groupe->getApprenants()->map(function ($apprenant) {
                     return [
                         'id' => $apprenant->getId(),

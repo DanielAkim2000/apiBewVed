@@ -17,16 +17,16 @@ class Apprenant
     private ?int $id = null;
 
     #[ORM\Column(length: 255)]
-    private ?string $firstname = null;
+    private string $firstname;
 
     #[ORM\Column(length: 255)]
-    private ?string $lastname = null;
+    private string $lastname;
 
     #[ORM\Column(length: 255)]
-    private ?string $sexe = null;
+    private string $sexe;
 
     #[ORM\Column]
-    private ?int $age = null;
+    private int $age;
 
     /**
      * @var Collection<int, Competence>
@@ -35,7 +35,7 @@ class Apprenant
     private Collection $Competences;
 
     #[ORM\ManyToOne(inversedBy: 'apprenants')]
-    private ?Promotion $Promotion = null;
+    private Promotion $Promotion;
 
     public function __construct()
     {
