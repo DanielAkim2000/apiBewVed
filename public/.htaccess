@@ -24,6 +24,10 @@ DirectoryIndex index.php
 
     RewriteEngine On
 
+    # Force HTTPS if the connection is not secure
+    RewriteCond %{HTTP:X-Forwarded-Proto} !https
+    RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
     # Determine the RewriteBase automatically and set it as environment variable.
     # If you are using Apache aliases to do mass virtual hosting or installed the
     # project in a subdirectory, the base path will be prepended to allow proper
@@ -35,7 +39,7 @@ DirectoryIndex index.php
     RewriteRule .* - [E=BASE:%1]
 
     # Sets the HTTP_AUTHORIZATION header removed by Apache
-    RewriteCond %{HTTP:Authorization} .+
+    RewriteCond %{HTTP:Authorization} .
     RewriteRule ^ - [E=HTTP_AUTHORIZATION:%0]
 
     # Redirect to URI without front controller to prevent duplicate content
@@ -50,9 +54,7 @@ DirectoryIndex index.php
     # - use Apache >= 2.3.9 and replace all L flags by END flags and remove the
     #   following RewriteCond (best solution)
     RewriteCond %{ENV:REDIRECT_STATUS} =""
-    RewriteCond %{HTTPS} !=on
     RewriteRule ^index\.php(?:/(.*)|$) %{ENV:BASE}/$1 [R=301,L]
-
 
     # If the requested filename exists, simply serve it.
     # We only want to let Apache serve files and not directories.
