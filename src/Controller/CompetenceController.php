@@ -18,7 +18,8 @@ use Symfony\Component\Routing\Attribute\Route;
 #[Route('/competence')]
 class CompetenceController extends AbstractController {
     #[Route('/', name: 'app_competence_index', methods: ['GET'])]
-    public function getAllCompetences ( CompetenceRepository $competenceRepository){
+    public function getAllCompetences ( CompetenceRepository $competenceRepository) : Response
+    {
         $competences = $competenceRepository->findAll();
 
         $competenceArray = [];

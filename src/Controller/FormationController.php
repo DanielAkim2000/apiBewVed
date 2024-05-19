@@ -210,7 +210,7 @@ class FormationController extends AbstractController
     }
 
     #[Route('/{id}/addgroup', name: 'app_formation_addgroup', methods: ['POST'])]
-    public function addGroup(Request $request, Formation $formation, EntityManagerInterface $entityManager)
+    public function addGroup(Request $request, Formation $formation, EntityManagerInterface $entityManager) : Response
     {
         // Suppression des anciens groupes
         foreach ($formation->getGroupes() as $groupe) {

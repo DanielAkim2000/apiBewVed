@@ -14,9 +14,11 @@ use Symfony\Component\Routing\Attribute\Route;
 
 #[Route('/formateur')]
 
-class FormateurController extends AbstractController{
+class FormateurController extends AbstractController
+{
     #[Route('/', name: 'app_formateur_index', methods: ['GET'])]
-    public function getAllFormateurs(FormateurRepository $formateurRepository){
+    public function getAllFormateurs(FormateurRepository $formateurRepository) : Response
+    {
         $formateurs = $formateurRepository->findAll();
 
         $formateurArray = [];
@@ -32,7 +34,8 @@ class FormateurController extends AbstractController{
     }
 
     #[Route('/new', name: 'app_formateur_new', methods: ['POST'])]
-    public function new(Request $request, EntityManagerInterface $entityManager){
+    public function new(Request $request, EntityManagerInterface $entityManager):Response
+    {
         $data = json_decode($request->getContent(), true);
 
         if (empty($data['prenom']) || empty($data['nom'])) {
@@ -51,7 +54,8 @@ class FormateurController extends AbstractController{
     }
 
     #[Route('/{id}', name: 'app_formateur_show', methods: ['GET'])]
-    public function show(Formateur $formateur){
+    public function show(Formateur $formateur): Response
+    {
         $formateurArray = [
             'id' => $formateur->getId(),
             'prenom' => $formateur->getFirstname(),
@@ -79,7 +83,8 @@ class FormateurController extends AbstractController{
     }
 
     #[Route('/{id}', name: 'app_formateur_delete', methods: ['DELETE'])]
-    public function delete(Formateur $formateur, EntityManagerInterface $entityManager){
+    public function delete(Formateur $formateur, EntityManagerInterface $entityManager): Response
+    {
 
         // si le formateur a des groupes en cours dans ses formations on les supprime aussi
         foreach ($formateur->getFormations() as $formation) {
