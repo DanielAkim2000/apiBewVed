@@ -1,7 +1,7 @@
 nelmio_cors:
     defaults:
         allow_credentials: false
-        allow_origin: ['*']
+        allow_origin: ['https://bewved.onrender.com']
         allow_headers: ['Content-Type', 'Authorization']
         allow_methods: ['GET', 'OPTIONS', 'POST', 'PUT', 'PATCH', 'DELETE']
         expose_headers: []
@@ -12,7 +12,7 @@ nelmio_cors:
     paths:
         '^/': 
             allow_credentials: false
-            allow_origin: ['*']
+            allow_origin: ['https://bewved.onrender.com']
             allow_headers: ['Content-Type', 'Authorization']
             allow_methods: ['GET', 'OPTIONS', 'POST', 'PUT', 'PATCH', 'DELETE']
             expose_headers: []
