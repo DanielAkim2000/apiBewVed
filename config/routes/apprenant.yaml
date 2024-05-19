@@ -26,7 +26,7 @@ app_apprenant_delete:
 app_apprenant_ajoutFormation:
     path: /apprenant/{id}/ajoutFormation
     controller: App\Controller\ApprenantController::ajoutFormation
-    methods: POST
+    methods: POSTcl
 
 app_apprenant_removeFormation:
     path: /apprenant/{id}/removeFormation

@@ -1,31 +1,38 @@
-# config/routes/formation.yaml
-
+# Routes for FormationController
 app_formation_index:
-    path: /formation/
+    path: /formation
     controller: App\Controller\FormationController::getAllFormations
-    methods: [GET]
+    methods: ['GET']
 
 app_formation_new:
     path: /formation/new
     controller: App\Controller\FormationController::new
-    methods: [GET, POST]
+    methods: ['GET', 'POST']
 
 app_formation_show:
     path: /formation/{id}
     controller: App\Controller\FormationController::show
-    methods: [GET]
+    methods: ['GET']
+    requirements:
+        id: '\d+'
 
 app_formation_edit:
     path: /formation/{id}/edit
     controller: App\Controller\FormationController::edit
-    methods: [PUT]
+    methods: ['PUT']
+    requirements:
+        id: '\d+'
 
 app_formation_delete:
     path: /formation/{id}
     controller: App\Controller\FormationController::delete
-    methods: [DELETE]
+    methods: ['DELETE']
+    requirements:
+        id: '\d+'
 
 app_formation_addgroup:
-    path: /formation/{id}/addgroup
+    path: /formation/{id}/addgroup/
     controller: App\Controller\FormationController::addGroup
-    methods: [POST]
+    methods: ['POST']
+    requirements:
+        id: '\d+'
