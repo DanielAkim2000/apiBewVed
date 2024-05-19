@@ -1,0 +1,31 @@
+# config/routes/formation.yaml
+
+app_formation_index:
+    path: /formation/
+    controller: App\Controller\FormationController::getAllFormations
+    methods: [GET]
+
+app_formation_new:
+    path: /formation/new
+    controller: App\Controller\FormationController::new
+    methods: [GET, POST]
+
+app_formation_show:
+    path: /formation/{id}
+    controller: App\Controller\FormationController::show
+    methods: [GET]
+
+app_formation_edit:
+    path: /formation/{id}/edit
+    controller: App\Controller\FormationController::edit
+    methods: [PUT]
+
+app_formation_delete:
+    path: /formation/{id}
+    controller: App\Controller\FormationController::delete
+    methods: [DELETE]
+
+app_formation_addgroup:
+    path: /formation/{id}/addgroup
+    controller: App\Controller\FormationController::addGroup
+    methods: [POST]

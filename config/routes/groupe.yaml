@@ -1,0 +1,26 @@
+# config/routes/groupe.yaml
+
+app_groupe_index:
+    path: /groupe/
+    controller: App\Controller\GroupeController::index
+    methods: [GET]
+
+app_groupe_new:
+    path: /groupe/new
+    controller: App\Controller\GroupeController::new
+    methods: [GET, POST]
+
+app_groupe_show:
+    path: /groupe/{id}
+    controller: App\Controller\GroupeController::show
+    methods: [GET]
+
+app_groupe_edit:
+    path: /groupe/{id}/edit
+    controller: App\Controller\GroupeController::edit
+    methods: [GET, POST]
+
+app_groupe_delete:
+    path: /groupe/{id}
+    controller: App\Controller\GroupeController::delete
+    methods: [POST]

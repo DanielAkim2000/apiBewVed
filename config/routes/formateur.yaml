@@ -1,0 +1,26 @@
+# config/routes/formateur.yaml
+
+app_formateur_index:
+    path: /formateur/
+    controller: App\Controller\FormateurController::getAllFormateurs
+    methods: [GET]
+
+app_formateur_new:
+    path: /formateur/new
+    controller: App\Controller\FormateurController::new
+    methods: [POST]
+
+app_formateur_show:
+    path: /formateur/{id}
+    controller: App\Controller\FormateurController::show
+    methods: [GET]
+
+app_formateur_update:
+    path: /formateur/{id}/edit
+    controller: App\Controller\FormateurController::edit
+    methods: [PUT]
+
+app_formateur_delete:
+    path: /formateur/{id}
+    controller: App\Controller\FormateurController::delete
+    methods: [DELETE]

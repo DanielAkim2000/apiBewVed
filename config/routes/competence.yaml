@@ -1,0 +1,5 @@
+# config/routes/competence.yaml
+app_competence_index:
+    path: /competence/
+    controller: App\Controller\CompetenceController::getAllCompetences
+    methods: GET

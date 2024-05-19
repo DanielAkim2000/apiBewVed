@@ -4,3 +4,27 @@ controllers:
         namespace: App\Controller
     type: attribute
 
+# config/routes.yaml
+app_apprenant:
+    resource: 'config/routes/apprenant.yaml'
+    type: 'yaml'
+
+app_competence:
+    resource: 'config/routes/competence.yaml'
+    type: 'yaml'
+
+app_formateur:
+    resource: 'config/routes/formateur.yaml'
+    type: 'yaml'
+
+app_formation:
+    resource: 'config/routes/formation.yaml'
+    type: 'yaml'
+
+app_groupe:
+    resource: 'config/routes/groupe.yaml'
+    type: 'yaml'
+
+app_promotion:
+    resource: 'config/routes/promotion.yaml'
+    type: 'yaml'

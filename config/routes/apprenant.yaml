@@ -1,0 +1,35 @@
+# config/routes/apprenant.yaml
+app_apprenant_index:
+    path: /apprenant/
+    controller: App\Controller\ApprenantController::getAllApprenant
+    methods: GET
+
+app_apprenant_show:
+    path: /apprenant/{id}
+    controller: App\Controller\ApprenantController::show
+    methods: GET
+
+app_apprenant_new:
+    path: /apprenant/new
+    controller: App\Controller\ApprenantController::new
+    methods: [GET, POST]
+
+app_apprenant_edit:
+    path: /apprenant/{id}/edit
+    controller: App\Controller\ApprenantController::edit
+    methods: PUT
+
+app_apprenant_delete:
+    path: /apprenant/{id}
+    controller: App\Controller\ApprenantController::delete
+    methods: DELETE
+
+app_apprenant_ajoutFormation:
+    path: /apprenant/{id}/ajoutFormation
+    controller: App\Controller\ApprenantController::ajoutFormation
+    methods: POST
+
+app_apprenant_removeFormation:
+    path: /apprenant/{id}/removeFormation
+    controller: App\Controller\ApprenantController::removeFormation
+    methods: POST
